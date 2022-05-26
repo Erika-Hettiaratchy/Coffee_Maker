@@ -1,0 +1,33 @@
+espresso = ["water", "coffee"]
+latte = ["water", "coffee", "milk", "cinnamon"]
+cappuccino = ["water", "coffee", "milk froth"]
+
+
+Menu = {
+        'espresso': ['water','coffee',],
+        'latte': ['water','coffee','milk','cinnamon',], 
+        'cappucino': ['water','milk','coffee',],
+        'pumpkin spice latte': ['water','milk','coffee','pumpkin spice sauce', 'sugar', 'whipped cream'],
+        'iced pumpkin spice latte': ['ice','milk','coffee',],
+        'latte with turmeric': ['water','milk','coffee','turmeric'],
+        }
+
+#list of available ingredients
+lstingredients = ['coffee', 'water', 'milk', 'milk froth','cinnamon']
+#list of types of coffee
+lstcoffee = ['cappuchino', 'latte', 'espresso']
+user_input = ''
+ingredients = []
+#input ingredients and exit once the user types exit, you make a list here
+while user_input != 'exit':
+    user_input = input("What are you adding? (coffee/water/milk/milk froth/cinnamon exit): ").lower()
+    if user_input != 'exit':
+        ingredients.append(user_input)  
+print(ingredients)
+
+hotcup = [key for key, value in Menu.items() if value == ingredients]
+print(hotcup)
+# ['key1', 'key2']
+print(f'Here is your coffee ☕ Enjoy!')
+#else:
+#    print('Not OK')
